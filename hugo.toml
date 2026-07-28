@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-opentype.github.io/"
+title = "go-ruby-opentype"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Ruby-facing handles"
+  status = "ready"
+  blurb = "`Module`, `Font` and `Face` wrap the typed go-opentype stack. Every method returns a Ruby-shaped value — a **Hash**, an **Array** or a scalar — exactly what an rbgo binding needs."
+[[params.phases]]
+  name = "Font parsing + rasterisation"
+  status = "ready"
+  blurb = "`open_font`/`parse` a TrueType/OpenType blob, then size it with `font.face(px)`: `measure`, `advance`, `kern`, `metrics`, anti-aliased `glyph_info`, variable-font `axes`/`named_instances`/`set_variation`."
+[[params.phases]]
+  name = "HarfBuzz-lite shaping"
+  status = "ready"
+  blurb = "`Opentype.shape(face, text, opts)` runs complex-text shaping — Arabic cursive joining, Indic/USE, Thai, Khmer, Egyptian, Hangul, vertical text — and returns an Array of positioned glyph Hashes."
+[[params.phases]]
+  name = "Unicode Bidi (UAX #9)"
+  status = "ready"
+  blurb = "`visual_order(text, base)` reorders mixed-direction text; `resolve_levels(text, base)` returns the embedding level of every rune. No `x/text` dependency anywhere."
+[[params.phases]]
+  name = "44 bundled fonts"
+  status = "ready"
+  blurb = "`families` lists every bundled, permissively-licensed family; `load(name)`/`most_legible`/`default_font` fetch bytes, defaulting to Atkinson Hyperlegible."
+[[params.phases]]
+  name = "rbgo binding"
+  status = "planned"
+  blurb = "`require \"opentype\"` — the thin `method_missing` shim over `Call` that exposes this Module inside github.com/go-embedded-ruby (rbgo). Pending in that repo; nothing here depends on the Ruby runtime."
