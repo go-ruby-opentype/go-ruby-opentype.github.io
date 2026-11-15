@@ -44,11 +44,9 @@
   <div class="hero"><div class="wrap">
     <div>
       <h1 class="head">go-ruby-opentype</h1>
-      <p class="sub">The Ruby face of the go-opentype text stack — a pure-Go gem core that rbgo binds as <code>require "opentype"</code>.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="/docs/">{{ partial "icons/book.html" . }}Documentation</a>
-        <a class="btn btn-ghost" href="https://github.com/go-ruby-opentype/opentype">{{ partial "icons/github.html" . }}GitHub</a>
-      </div>
+      <p class="sub">The Ruby face of the go-opentype text stack — a {{ if partial "mantra-on.html" . }}Go{{ else }}pure-Go{{ end }} gem core that rbgo binds as <code>require "opentype"</code>.</p>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust">{{ if not (partial "mantra-on.html" $) }}<span class="pill">pure Go · zero cgo</span>{{ end }}<span class="pill">require "opentype"</span><span class="pill">method_missing dispatch</span><span class="pill">Hash / Array results</span><span class="pill">HarfBuzz-lite shaping</span><span class="pill">UAX #9 bidi</span><span class="pill">44 bundled fonts</span><span class="pill">no Ruby-runtime dep</span><span class="pill">100% coverage</span><span class="pill">6+ arches</span></div>
       <div class="legacy"><div class="badges">
       <a href="/docs/"><img alt="Documentation (MkDocs Material + mike)" src="https://img.shields.io/badge/docs-mkdocs--material-B45309"></a>
